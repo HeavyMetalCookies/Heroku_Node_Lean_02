@@ -5,34 +5,42 @@ var PORT = process.env.PORT || 5190 ;
 var http = require('http');
 var   fs = require('fs'  );
 
+//: function New_SimplePromise(){
+//: 
+//:     var trigger=( 0 );
+//: 
+//:     function executor( func_1, func_2 ){
+//:         
+//:         while( 1 ){
+//: 
+//:             if( trigger == 1 ){ func_1( a ); break; };
+//:             if( trigger == 2 ){ func_2( b ); break; };
+//: 
+//:     };;
+//:     var pro=( new Promise( executor ) );
+//:     return( pro );
+//: 
+//: };;
+
 const HN2_Get_Fas =function( src_pat ){
 
-  //  var pro=( new Promise(
-  //          (A)=>{ return A; } //:resolve
-  //      ,   (B)=>{ return B; } //:reject
-  //  ));;
+    const RESOLVER(a)=>{ return( a ); };
+    const REJECTOR(a)=>{ return( a ); };
 
-    var pro=( new Promise( ()=>{
-            (A)=>{ return A; } //:resolve
-        ,   (B)=>{ return B; } //:reject
-    }));;
-    
+    return( new Promise((RESOLVER,REJECTOR)=>{
 
-    fs.readFile( src_pat,function(obj_err,dat_fil ){
-        if( obj_err ){
+        fs.readFile( src_pat,function(obj_err,dat_fil ){
+            if( obj_err ){
 
-            //:reject
-            pro.catch( obj_err );
+                REJECTOR( obj_err );
 
-        }else{
+            }else{
 
-            //:accept
-            pro.then( dat_fil );
+                RESOLVER( dat_fil );
 
-        };;
-    });;
-
-    return( pro );
+            };;
+        });;
+    )});;
 };;
 
 const HN2_SQL_Get_Tes =function( rar_daw ){ "use strict"
