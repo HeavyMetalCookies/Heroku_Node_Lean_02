@@ -5,23 +5,6 @@ var PORT = process.env.PORT || 5190 ;
 var http = require('http');
 var   fs = require('fs'  );
 
-//: function New_SimplePromise(){
-//: 
-//:     var trigger=( 0 );
-//: 
-//:     function executor( func_1, func_2 ){
-//:         
-//:         while( 1 ){
-//: 
-//:             if( trigger == 1 ){ func_1( a ); break; };
-//:             if( trigger == 2 ){ func_2( b ); break; };
-//: 
-//:     };;
-//:     var pro=( new Promise( executor ) );
-//:     return( pro );
-//: 
-//: };;
-
 const HN2_Get_Fas =function( src_pat ){
 
     const hn2_executor=( njs_resolver , njs_rejector )=>{
@@ -45,11 +28,10 @@ const HN2_Get_Fas =function( src_pat ){
 
 const HN2_SQL_Get_Tes =function( rar_daw ){ "use strict"
 
-    var rar=rar_daw[ 0 ];
-    var daw=rar_daw[ 1 ];
-    //:rar[1].end("[TODO:HN2_SQL_Get_Tes]");
+    //: rar daw = raw_daw[0|1]
+    var rar     = rar_daw[ 0 ];
+    var     daw = rar_daw[ 1 ];
 
-   
     HN2_Get_Fas( daw[0] /* src_pat */ )
         .then((dat_fil)=>{
         
