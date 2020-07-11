@@ -1,0 +1,97 @@
+
+
+
+//:ALSO WRONG
+////////////////////////////////////////////////////////////////
+const HN2_Get_Fas =function( src_pat ){
+
+    const RESOLVER=(a)=>{ return( a ); };
+    const REJECTOR=(a)=>{ return( a ); };
+    const EXECUTOR=( resolver , rejector )=>{
+
+        fs.readFile( src_pat,function(obj_err,dat_fil ){
+            if( obj_err ){
+
+                REJECTOR( obj_err );
+
+            }else{
+
+                RESOLVER( dat_fil );
+
+            };;
+        });;
+    };;
+
+    var pro=( new Promise( EXECUTOR ) );
+    return( pro );
+};;
+
+const HN2_SQL_Get_Tes =function( rar_daw ){ "use strict"
+
+    var rar=rar_daw[ 0 ];
+    var daw=rar_daw[ 1 ];
+    //:rar[1].end("[TODO:HN2_SQL_Get_Tes]");
+
+   
+    HN2_Get_Fas( daw[0] /* src_pat */ )
+        .then((dat_fil)=>{
+        
+            rar[1].end( dat_fil );
+        
+        }).catch((obj_err)=>{
+        
+            rar[1].end( "[UH_OH]:" + obj_err.toString() );
+        
+        });;
+
+};;
+////////////////////////////////////////////////////////////////
+
+//:THIS IS WRONG:
+////////////////////////////////////////////////////////////////
+
+const HN2_Get_Fas =function( src_pat ){
+
+    var pro=( new Promise( ()=>{
+            (A)=>{ return A; } //:resolve
+        ,   (B)=>{ return B; } //:reject
+    }));;
+    
+
+    fs.readFile( src_pat,function(obj_err,dat_fil ){
+        if( obj_err ){
+
+            //throw( obj_err );
+            pro.reject( obj_err );
+
+        }else{
+
+            pro.accept( dat_fil );
+
+        };;
+    });;
+
+    return( pro );
+};;
+
+const HN2_SQL_Get_Tes =function( rar_daw ){ "use strict"
+
+    var rar=rar_daw[ 0 ];
+    var daw=rar_daw[ 1 ];
+    //:rar[1].end("[TODO:HN2_SQL_Get_Tes]");
+
+   
+    HN2_Get_Fas( daw[0] /* src_pat */ )
+        .then((dat_fil)=>{
+        
+            rar[1].end( dat_fil );
+        
+        }).catch((obj_err)=>{
+        
+            rar[1].end( "[UH_OH]:" + obj_err.toString() );
+        
+        });;
+
+};;
+
+////////////////////////////////////////////////////////////////
