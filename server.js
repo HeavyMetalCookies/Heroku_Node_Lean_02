@@ -24,8 +24,8 @@ var   fs = require('fs'  );
 
 const HN2_Get_Fas =function( src_pat ){
 
-    const RESOLVER(a)=>{ return( a ); };
-    const REJECTOR(a)=>{ return( a ); };
+    const RESOLVER=(a)=>{ return( a ); };
+    const REJECTOR=(a)=>{ return( a ); };
 
     return( new Promise((RESOLVER,REJECTOR)=>{
 
