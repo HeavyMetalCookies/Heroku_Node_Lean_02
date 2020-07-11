@@ -39,7 +39,7 @@ const HN2_Get_Fas =function( src_pat ){
         });;
     };;
 
-    var pro=( new Promise( HN2_EXECUTOR ) );
+    var pro=( new Promise( hn2_executor ) );
     return( pro );
 };;
 
