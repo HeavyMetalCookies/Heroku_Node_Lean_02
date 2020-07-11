@@ -1,5 +1,6 @@
-//:HN1: Heroku_Node:01
-//:     Minimal example to serve Html + Javascript.
+//:HN2: Heroku_Node(lean):02
+//:     HN1: Minimal example to serve Html + Javascript.
+//:     HN2: Serve File as text, promises, routing refactor.
 
 var PORT = process.env.PORT || 5190 ;
 var http = require('http');
@@ -45,7 +46,7 @@ const HN2_SQL_Get_Tes =function( rar_daw ){ "use strict"
 
 };;
 
-const HN2_Ser_Fil =function( rar_daw ){ "use strict"
+const HN1_Ser_Fil =function( rar_daw ){ "use strict"
 
     var rar=rar_daw[ 0 ];
     var daw=rar_daw[ 1 ];
@@ -110,10 +111,10 @@ const HN2_Rou=function( req , res ){ "use strict"
     //: 06: Perform selected action on data:
              
     /* 01 */    tab_daw={  
-    /* -- */        "/K" : [ "./key._"   , "text/plain"      ]
-    /* -- */    ,   "/H" : [ "./htm._"   , "text/html"       ]
-    /* -- */    ,   "/J" : [ "./j_s._"   , "text/javascript" ]
-    /* -- */    ,   "/T" : [ "./sql._"   , "SQL_GET_TEST"    ]
+    /* -- */        "/K" : [ "./server.js", "text/plain"      ]
+    /* -- */    ,   "/H" : [ "./htm._"    , "text/html"       ]
+    /* -- */    ,   "/J" : [ "./j_s._"    , "text/javascript" ]
+    /* -- */    ,   "/T" : [ "./sql._"    , "SQL_GET_TEST"    ]
     /* -- */    };;
     /* 02 */    daw=( tab_daw[ url ] || tab_daw[ "/K" ] );
     /* 03 */    tab_act={ 
@@ -128,29 +129,106 @@ const HN2_Rou=function( req , res ){ "use strict"
 
 };;
 
-const HN2_Mai=function(){ "use strict"
+const HN1_Mai=function(){ "use strict"
 
     http.createServer( HN2_Rou ).listen(PORT);
 
 };;
-HN2_Mai();
+HN1_Mai();
 
-/** 
-    HN2_Rou: Main request routing function.
-    HN2_Mai: Main entry point for project HN2 (HerokuNodeLean02)
-    ent[1]: Action to perform on data
-    ent[0]: The data associated with selected route
+/**-*********************************************************-**
 
-        daw:Data_And_Whatever (Usually:What to do with the data)
-    tab_daw:TABle_of_Data_And_Whatever
-    tab_rou:TABle_of_ROUtes (SEE: tab_dap)
-    tab_dap:TABle_of_DataActionPairs ( [data,action] )
-    tab_dap:Old, See: tab_daw
-    tab_act:TABle_of_ACTions
-    sel_act:Selected_Action
-        act:Shorthand for sel_act
+                 ": Double quote character. Same as single:'
+                 ': Single quote character. Same as double:"
+                 +: [ addition | string concat | english:And ]
+                 ,: Seperates elements of array or object.
+                 .: English period or dot operator.
+                 /: Forward slash, url or file path seperator
+                 0: Array access of first element
+                 1: Array access of second element
+                 :: Colon character, used for {key:value}
+                 ;: End a single-line statement
+                 =: Assign 
+                (): Operator precedence or function invokation.
+                //: comment character
+                01: First project in Heroku_Node project series
+                ;;: End a multi-line  statement
+                ==: Equality Comparison
+                []: Array literal or array access.
+                if: Denotes condition required to execute block
+                to: Participle or denoting conversion.
+                {}: [ object / dictionary ] literal.
+               //:: My personal colored comment sequence
+               200: HTTP Status Code: Okay.
+               ===: Strict Equality Comparison
+               HN1: Heroku_Node_01 (Project Namespace)
+               UTF: Unicode Transformation Format (ASCI++)
+               end: Server is done talking to client.
+               env: contains virtual machine's environment vars
+               fs: file_system, built-in Node.js package.
+               pac: Path And Contenttype
+               rar: rar[0]==req, rar[1]==res
+               req: REQuest  object
+               res: RESponse object (TYPE:ServerResponse)
+               src: Denote path to javascript source file
+               url: Uniform_Resource_Locator
+               var: function scope variable
+              "/H": Routes to our HTML file.
+              "/J": Routes to our JavaScript file.
+              "/K": Routes to our "key._" file.
+              5190: Default Port Number if PORT undefined
+              HTML: Hyper Text Markup Language
+              Html: A stupid way to write "HTML"
+              PORT: PORT number server application listens on
+              PORT: defined if deployed on Heroku or Azure
+              else: Denotes alternative block of code.
+              func: NOT a keyword. Function pointer variable.
+              http: http package that comes with Node.js
+             alert: Display an alert box
+             const: immutable block-scope variable
+             http: hyper_text_transer_protocol
+             serve: To deliver data from server to client
+             title: Node representing <title> element.
+            <head>: Metadata container element.
+            script: Declare script reference in HTML file.
+            window: Represents an open window in a browser.
+           "utf-8": Unicode byte encoding. Extends: US-ASCII
+           <title>: Denote title of html page
+           DOCTYPE: Tell browser what markup language is used.
+           HN1_Mai: Main entry point.
+           Minimal: No extranious moving parts.
+           charset: Denote character encoding of file. 
+           dat_fil: Data of type "file" AKA: File data.
+           example: Show you how it is done
+           jum_dic: JUMp_DICtionary (Like a jumptable)
+           not_nil: Denote object is not [nil/null]
+           obj_err: Object of duck-type error.
+           process: built-in Node.js global [variable/object]
+           require: Like: Java import, C# using , C include
+          "listen": Creates listener on specified port.
+          document: Root node of the HTML document.
+          function: Used for functions assigned to const
+          readFile: Async file load
+         "./htm._": Html file with "_" extension
+         "./j_s._": Javascript file with "_" extension
+         "./key._": File documenting 100% of source tokens.
+         setHeader: Sets single header value for headers object.
+         writeHead: Sends a response header to the request
+        JavaScript: The language used by Node.js servers
+        Javascript: Poorly capitalized "JavaScript"
+       "text/html": "Content-Type" for html files
+       HN1_Ser_Fil: HN1_Serve_File: Serves a file to client.
+       Heroku_Node: Denotes a project using Heroku & Node.js
+      "text/plain": "Content-Type" for plain text, NOT code.
+      "use strict": Warnings are errors.
+      createServer: SEE[ https://nodejs.org/api/http.html ]
+     Default__Path: Default path if browser url is invalid
+     Selected_Path: Path selected in browser url
+    "WINDOW_ALERT": Placeholder string.
+   " Content-Type": Header indicating media type of resource.
+   <!DOCTYPE HTML>: Tell browser document type is HTML.
+  "DOCUMENT_TITLE": Placeholder string.
+"tex t/javascript": "Content-Type" for javascript files
+const A=(B)=>{...}: function "A" taking param "B"
 
-    dic: An object used as a dictionary.
-    ent: Entry taken from dictionary or array.
-    url: String path requested by client.
-**/
+**-*********************************************************-**/
