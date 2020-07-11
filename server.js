@@ -67,7 +67,8 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
 
 };;
 
-//:¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯://
+//://////////////////////////////////////////////////////////://
+//:                                                          ://
 //: main request routing function.                           ://
 //:                                                          ://
 //: Routes can be thought of shortcuts that are associated   ://
@@ -151,6 +152,7 @@ HN1_Mai();
                  =: Assign 
                 (): Operator precedence or function invokation.
                 //: comment character
+                /T: Test url path
                 01: First project in Heroku_Node project series
                 ;;: End a multi-line  statement
                 ==: Equality Comparison
@@ -163,10 +165,14 @@ HN1_Mai();
                ===: Strict Equality Comparison
                HN1: Heroku_Node_01 (Project Namespace)
                UTF: Unicode Transformation Format (ASCI++)
+               act: Action to perform
+               daw: DataAndWhatever
                end: Server is done talking to client.
                env: contains virtual machine's environment vars
-               fs: file_system, built-in Node.js package.
+                fs: file_system, built-in Node.js package.
+               new: New keyword instantiates instances
                pac: Path And Contenttype
+               pro: Promise instance
                rar: rar[0]==req, rar[1]==res
                req: REQuest  object
                res: RESponse object (TYPE:ServerResponse)
@@ -177,6 +183,7 @@ HN1_Mai();
               "/J": Routes to our JavaScript file.
               "/K": Routes to our "key._" file.
               5190: Default Port Number if PORT undefined
+              DATA: Information to act on or transform somehow
               HTML: Hyper Text Markup Language
               Html: A stupid way to write "HTML"
               PORT: PORT number server application listens on
@@ -184,12 +191,19 @@ HN1_Mai();
               else: Denotes alternative block of code.
               func: NOT a keyword. Function pointer variable.
               http: http package that comes with Node.js
+              then: Do this if promise accepted
+             ROUTE: Relative url identifying page or resource
              alert: Display an alert box
+             catch: Do this if promise rejected or error.
              const: immutable block-scope variable
-             http: hyper_text_transer_protocol
+              http: hyper_text_transer_protocol
              serve: To deliver data from server to client
+             sql._: A test SQL file to help figure things out.
              title: Node representing <title> element.
             <head>: Metadata container element.
+            ACTION: A function to be performed with DATA
+            listen: Creates listener on specified port.
+            return: Return keyword returns value from function.
             script: Declare script reference in HTML file.
             window: Represents an open window in a browser.
            "utf-8": Unicode byte encoding. Extends: US-ASCII
@@ -197,6 +211,7 @@ HN1_Mai();
            DOCTYPE: Tell browser what markup language is used.
            HN1_Mai: Main entry point.
            Minimal: No extranious moving parts.
+           Promise: Promise class built into NodeJS
            charset: Denote character encoding of file. 
            dat_fil: Data of type "file" AKA: File data.
            example: Show you how it is done
@@ -204,8 +219,11 @@ HN1_Mai();
            not_nil: Denote object is not [nil/null]
            obj_err: Object of duck-type error.
            process: built-in Node.js global [variable/object]
+           rar_daw: [ raw , daw ] packed together.
            require: Like: Java import, C# using , C include
-          "listen": Creates listener on specified port.
+           tab_act: TABle_of_ACTions
+           tab_daw: TABle_of_DataAndWhatever
+          WHATEVER: Interpret it as data,function or whatever.
           document: Root node of the HTML document.
           function: Used for functions assigned to const
           readFile: Async file load
@@ -218,15 +236,21 @@ HN1_Mai();
         Javascript: Poorly capitalized "JavaScript"
        "text/html": "Content-Type" for html files
        HN1_Ser_Fil: HN1_Serve_File: Serves a file to client.
+       HN2_Get_Fas: Get FileAsString(fas)
        Heroku_Node: Denotes a project using Heroku & Node.js
       "text/plain": "Content-Type" for plain text, NOT code.
       "use strict": Warnings are errors.
       createServer: SEE[ https://nodejs.org/api/http.html ]
+      hn2_executor: Executor function from HN2 project.
+      njs_rejector: Rejector function built into NodeJS
+      njs_resolver: Resolver function built into NodeJS
      Default__Path: Default path if browser url is invalid
      Selected_Path: Path selected in browser url
+    "SQL_GET_TEST": Action to perform is SQL GET TEST.
     "WINDOW_ALERT": Placeholder string.
    " Content-Type": Header indicating media type of resource.
    <!DOCTYPE HTML>: Tell browser document type is HTML.
+   HN2_SQL_Get_Tes: Get SQL file as string test.
   "DOCUMENT_TITLE": Placeholder string.
 "tex t/javascript": "Content-Type" for javascript files
 const A=(B)=>{...}: function "A" taking param "B"
