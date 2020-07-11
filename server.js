@@ -118,9 +118,9 @@ const HN2_Rou=function( req , res ){ "use strict"
     /* -- */    };;
     /* 02 */    daw=( tab_daw[ url ] || tab_daw[ "/K" ] );
     /* 03 */    tab_act={ 
-    /* -- */        "text/plain"      : HN2_Ser_Fil
-    /* -- */    ,   "text/html"       : HN2_Ser_Fil
-    /* -- */    ,   "text/javascript" : HN2_Ser_Fil
+    /* -- */        "text/plain"      : HN1_Ser_Fil
+    /* -- */    ,   "text/html"       : HN1_Ser_Fil
+    /* -- */    ,   "text/javascript" : HN1_Ser_Fil
     /* -- */    ,   "SQL_GET_TEST"    : HN2_SQL_Get_Tes
     /* -- */    };;
     /* 04 */    act = tab_act[ daw[ 1 ] ];
