@@ -20,18 +20,20 @@ const HN2_Get_Fas =function( src_pat ){
     return( pro );
 };;
 
-const HN2_SQL_Get_Tes =function( rar_dap ){ "use strict"
+const HN2_SQL_Get_Tes =function( rar_daw ){ "use strict"
 
+    var rar=rar_daw[ 0 ];
+    var daw=rar_daw[ 1 ];
     rar[1].end("[TODO:HN2_SQL_Get_Tes]");
 
 };;
 
-const HN2_Ser_Fil =function( rar_dap ){ "use strict"
+const HN2_Ser_Fil =function( rar_daw ){ "use strict"
 
-    var rar=rar_dap[ 0 ];
-    var dap=rar_dap[ 1 ];
+    var rar=rar_daw[ 0 ];
+    var daw=rar_daw[ 1 ];
     
-    fs.readFile( dap[0],function(obj_err,dat_fil){
+    fs.readFile( daw[0],function(obj_err,dat_fil){
 
         if(obj_err){
 
@@ -39,7 +41,7 @@ const HN2_Ser_Fil =function( rar_dap ){ "use strict"
 
         }else{
 
-            rar[1].writeHead(200,{ "Content-Type": dap[1] });
+            rar[1].writeHead(200,{ "Content-Type": daw[1] });
             rar[1].end( dat_fil , "utf-8" );
 
         };;
