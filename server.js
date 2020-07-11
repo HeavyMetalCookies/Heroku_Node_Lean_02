@@ -24,24 +24,22 @@ var   fs = require('fs'  );
 
 const HN2_Get_Fas =function( src_pat ){
 
-    const RESOLVER=(a)=>{ return( a ); };
-    const REJECTOR=(a)=>{ return( a ); };
-    const EXECUTOR=( RESOLVER , REJECTOR )=>{
+    const hn2_executor=( njs_resolver , njs_rejector )=>{
 
         fs.readFile( src_pat,function(obj_err,dat_fil ){
             if( obj_err ){
 
-                REJECTOR( obj_err );
+                njs_rejector( obj_err );
 
             }else{
 
-                RESOLVER( dat_fil );
+                njs_resolver( dat_fil );
 
             };;
         });;
     };;
 
-    var pro=( new Promise( EXECUTOR ) );
+    var pro=( new Promise( HN2_EXECUTOR ) );
     return( pro );
 };;
 
