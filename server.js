@@ -7,13 +7,21 @@ var   fs = require('fs'  );
 
 const HN2_Get_Fas =function( src_pat ){
 
-    var pro=( new Promise() );
+    var pro=( new Promise(
+        (A)=>{ return A; } //:accept
+    ,   (B)=>{ return B; } //:reject
+    ));;
 
     fs.readFile( src_pat,function(obj_err,dat_fil ){
         if( obj_err ){
+
+            //throw( obj_err );
             pro.reject( obj_err );
+
         }else{
+
             pro.accept( dat_fil );
+
         };;
     });;
 
