@@ -20,7 +20,7 @@ const HN2_Get_Fas =function( src_pat ){
     return( pro );
 };;
 
-const HN2_SQL_Get_Tes( rar_dap ){
+const HN2_SQL_Get_Tes =function( rar_dap ){ "use strict"
 
     rar[1].end("[TODO:HN2_SQL_Get_Tes]");
 
