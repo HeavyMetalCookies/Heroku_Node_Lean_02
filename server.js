@@ -26,8 +26,7 @@ const HN2_Get_Fas =function( src_pat ){
 
     const RESOLVER=(a)=>{ return( a ); };
     const REJECTOR=(a)=>{ return( a ); };
-
-    return( new Promise((RESOLVER,REJECTOR)=>{
+    const EXECUTOR=( resolver , rejector )=>{
 
         fs.readFile( src_pat,function(obj_err,dat_fil ){
             if( obj_err ){
@@ -40,7 +39,10 @@ const HN2_Get_Fas =function( src_pat ){
 
             };;
         });;
-    )});;
+    };;
+
+    var pro=( new Promise( EXECUTOR ) );
+    return( pro );
 };;
 
 const HN2_SQL_Get_Tes =function( rar_daw ){ "use strict"
