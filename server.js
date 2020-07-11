@@ -24,7 +24,19 @@ const HN2_SQL_Get_Tes =function( rar_daw ){ "use strict"
 
     var rar=rar_daw[ 0 ];
     var daw=rar_daw[ 1 ];
-    rar[1].end("[TODO:HN2_SQL_Get_Tes]");
+    //:rar[1].end("[TODO:HN2_SQL_Get_Tes]");
+
+   
+    HN2_Get_Fas( daw[0] /* src_pat */ )
+        .then((dat_fil)=>{
+        
+            rar[1].end( dat_fil );
+        
+        }).catch((obj_err)=>{
+        
+            rar[1].end( "[UH_OH]:" + obj_err.toString() );
+        
+        });;
 
 };;
 
