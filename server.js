@@ -47,6 +47,22 @@ const HN2_Ser_Fil =function( rar_dap ){ "use strict"
 
 };;
 
+//:¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯://
+//: main request routing function.                           ://
+//:                                                          ://
+//: Routes can be thought of shortcuts that are associated   ://
+//: with a piece of data and an action, in a triplet.        ://
+//:                                                          ://
+//:     ROUTE           : The URL requested by client        ://
+//:     DATA            : Data associated with route         ://
+//:     ACTION|WHATEVER : What to do with the DATA           ://
+//:                                                          ://
+//: Because the last entry of the triplet is an              ://
+//: "ACTION | WHATEVER" we need to resolve the               ://
+//: "ACTION | WHATEVER" string to an ACTION function         ://
+//: to perform using the DATA associated with ROUTE.         ://
+//:                                                          ://
+//:__________________________________________________________://
 const HN2_Rou=function( req , res ){ "use strict"
 
     //:Declare_And_Summarize_All_Function_Variables:
